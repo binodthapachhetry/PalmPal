@@ -105,6 +105,20 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    sourceSets {                                                                                                                                
+         main {                                                                                                                                  
+             assets.srcDirs += ['src/main/assets']                                                                                               
+         }                                                                                                                                       
+     } 
+     // You might also want to add this to handle larger models                                                                                  
+     packagingOptions {                                                                                                                          
+         pickFirst '**/*.so'                                                                                                                     
+     }                                                                                                                                           
+                                                                                                                                                 
+     // And potentially increase Java memory                                                                                                     
+     dexOptions {                                                                                                                                
+         javaMaxHeapSize "4g"                                                                                                                    
+     }    
 }
 
 dependencies {

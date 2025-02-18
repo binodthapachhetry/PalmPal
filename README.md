@@ -18,7 +18,26 @@ npm start
 yarn start
 ```
 
-## Step 2: Build and run your app
+## Step 2: Before running the app, you need to:
+
+1. Download the model file:                                                                                                                     
+    - Download `Llama-3.2-3B-Instruct-Q4_K_M.gguf` from [Hugging Face](https://huggingface.co/bartowski/Llama-3.2-3B-Instruct-GGUF/blob/main/Llama-3.2-3B-Instruct-Q4_K_M.gguf)               
+                                                                                                                                                 
+ 2. Place the model file in:
+     android/app/src/main/assets/models/ 
+
+ 3. Ensure the filename matches exactly: `Llama-3.2-3B-Instruct-Q4_K_M.gguf`   
+
+ ``` sh
+ mkdir -p android/app/src/main/assets/models 
+ touch android/app/src/main/assets/models/.gitkeep ```                                                                  
+                                                                                                                                                 
+ 4. The model file is intentionally excluded from git due to its large size (~2GB)                                                                                                                                                                                         
+ ``` sh 
+ git reset android/app/src/main/assets/models/Llama-3.2-3B-Instruct-Q4_K_M.gguf  
+ ```
+
+## Step 3: Build and run your app
 
 With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
 
@@ -62,7 +81,7 @@ If everything is set up correctly, you should see your new app running in the An
 
 This is one way to run your app — you can also build it directly from Android Studio or Xcode.
 
-## Step 3: Modify your app
+## Step 4: Modify your app
 
 Now that you have successfully run the app, let's make changes!
 
